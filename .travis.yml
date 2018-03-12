@@ -1,0 +1,8 @@
+language: c
+compiler:
+  - gcc
+os:
+  - linux
+  - osx
+script: ./build.bash
+osx_image: xcode9
