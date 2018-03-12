@@ -1,5 +1,5 @@
 #!/bin/sh
-cd lab_1/client
+cd lab1/client
 make
-cd ../lab_1/server
+cd ../lab1/server
 make
