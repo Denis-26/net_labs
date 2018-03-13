@@ -1,6 +1,6 @@
 
 CC=gcc
-CFLAGS=-c
+CFLAGS=-c -std=c99
 
 all: server
 
