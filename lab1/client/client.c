@@ -5,9 +5,9 @@
 #include<arpa/inet.h>
 #include<sys/socket.h>
 
-#define SERVER "127.0.0.1"
+#define SERVER "192.168.43.111"
 #define BUFLEN 512
-#define PORT 8888
+#define PORT 4000
 
 void die(char *s){
     perror(s);
@@ -18,7 +18,6 @@ void die(char *s){
 int main(void){
     struct sockaddr_in si_other;
     int s, slen=sizeof(si_other);
-    char buf[BUFLEN];
     char message[BUFLEN];
 
     if ( (s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1){
@@ -42,7 +41,6 @@ int main(void){
             die("sendto()");
         }
 
-        memset(buf,'\0', BUFLEN);
         int server_answer = 0;
         if (recvfrom(s, &server_answer, 1, 0, (struct sockaddr *) &si_other, &slen) == -1){
             die("recvfrom()");
