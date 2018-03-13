@@ -28,7 +28,8 @@ int ispolindrom(char *str){
 int main(void){
     struct sockaddr_in si_me, si_other;
 
-    int s, slen = sizeof(si_other) , recv_len;
+    int s, recv_len;
+    socklen_t slen = sizeof(si_other);
     char buf[BUFLEN];
 
     if ((s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1){

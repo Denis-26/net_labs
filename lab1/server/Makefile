@@ -1,6 +1,6 @@
 
 CC=gcc
-CFLAGS=-c -std=c99
+CFLAGS=-c -std=c99 -Wall
 
 all: server
 

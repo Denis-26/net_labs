@@ -1,9 +1,9 @@
-#include<stdio.h> //printf
-#include<string.h> //memse
-#include<stdlib.h> //exit(0);
+#include <stdio.h> //printf
+#include <string.h> //memse
+#include <stdlib.h> //exit(0);
 #include <unistd.h> //close()
-#include<arpa/inet.h>
-#include<sys/socket.h>
+#include <arpa/inet.h>
+#include <sys/socket.h>
 
 #define SERVER "192.168.43.111"
 #define BUFLEN 512
@@ -14,10 +14,12 @@ void die(char *s){
     exit(1);
 }
 
+int inet_aton(const char *cp, struct in_addr *inp);
 
 int main(void){
     struct sockaddr_in si_other;
-    int s, slen=sizeof(si_other);
+    int s;
+    socklen_t slen = sizeof(si_other);
     char message[BUFLEN];
 
     if ( (s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1){
